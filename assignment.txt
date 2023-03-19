@@ -1,0 +1,38 @@
+Projekt pro I. pololetí
+Vytvořte vlastní řešení prohlížeče databáze. Vzor najdete na http://koupja.delta-studenti.cz/ip-firma-prohlizec/. Důležité není formátování, ale funkčnost, nicméně projekt musí být přehledný. 
+
+Prohlížeč MUSÍ obsahovat
+------------------------------
+DONE: Seznam všech zaměstnanců s položkami jméno, místnost, telefon, pozice
+DONE: jméno slouží jako hyperlink na kartu zaměstnance
+DONE: seznam může uživatel setřídit vzestupně i sestupně podle kteréhokoli sloupce
+DONE: Seznam všech místností s položkami název, číslo, telefon
+DONE: název slouží jako hyperlink na kartu místnosti
+DONE: seznam může uživatel setřídit vzestupně i sestupně podle kteréhokoli sloupce
+DONE: Kartu zaměstnance, která z adresní řádky získá ID, které má zobrazit (použijte filtrování) a ukáže jméno, příjmení, pozici, mzdu, domovskou místnost a seznam všech klíčů, které zaměstnanec má. 
+DONE: Název karty (tag TITLE) obsahuje rozumná data vytažená z databáze, ne obecný text stejný pro všechny. 
+DONE: Domovská místnost i názvy místností, od kterých má klíče, jsou hyperlinky vedoucí na karty příslušných místností
+DONE: Kartu místnosti, která obsahuje číslo, název, telefon, seznam všech lidí, kteří zde mají domovskou místnost a seznam všech lidí, kteří odsud mají klíče. 
+DONE: Název karty (tag TITLE) obsahuje rozumná data vytažená z databáze, ne obecný text stejný pro všechny. 
+DONE: Karta obsahuje také průměrnou mzdu všech zaměstnanců, kteří zde mají domovskou místnost
+DONE: Všechna jména v seznamech (u klíčů i zaměstnanců) vedou na karty příslušných zaměstnanců
+DONE: Z karet "detail zaměstance/místnosti" vždy vede odkaz zpět na seznam všech objektů.
+DONE: Veškerý generovaný kód musí být validní (ověřte sami všechny karty pomocí validátoru) a nesmí být zranitelný SQL Injectem.
+DONE: V případě předání neplatného ID musí karta místnosti či zaměstnance vracet přehlednou chybovou stránku Not Found, při požadavku bez ID či jinak formálně špatném bude zobrazovat Bad Request včetně správných HTTP hlaviček
+DONE: Kód bude v ideálním případě "rozdělen" na malé funkce, které budou uloženy v jednou souboru (který si v průběhu načítání jednotlivý stránek vložíte - require/include), nikoliv jako „špageta“, která se táhne odshora dolu celým skriptem.
+DONE: Podobně také připojení k databázi musí být umístěno v jediném souboru
+DONE: Pro přístup ke kterékoli stránce bude potřeba, aby se uživatel přihlásil jménem a heslem
+DONE: Do databáze přidejte v tabulce employee sloupce "login", "password" (řetězce) a "admin" (bool). Uživatelé s oprávněním admin mohou editovat, ostatní jen prohlížet a měnit vlastní heslo, nepřihlášení uživatelé neuvidí nic.
+DONE: U každé položky v seznamu zaměstnanců i místností bude tlačítko "Editovat" (graficky může být tlačítko, ikona pera, cokoliv..., pro ne-admina bude tlačítko neaktivní). Po kliku na něj se otevře editační okno, ve kterém bude možno měnit všechny položky uložené v databázi.
+DONE: Každý seznam také bude obsahovat tlačítko "založit novou místnost/osobu", která povede na víceméně stejné editační okno.
+DONE: Editační okno bude hlídat, aby byly vyplněny všechny povinné položky a nepovolí uložení špatně vyplněného formuláře, místo toho předvyplní již upravené hodnoty a vypíše rozumnou formou "seznam chyb ve formuláři".
+DONE: U zaměstnanců navíc bude možné přidávat a odebírat klíče (implementaci zvolte sami - multiselect, checkboxy, kombinované řešení, vlastní stránka, nebo jako součást formuláře pro editaci osoby, ...). 
+DONE: Nutnou podmínkou ale je, aby uživatel při tvorbě a odebírání klíče viděl, k jaké místnosti klíč patří, tedy aby skutečně přidával klíč k místnosti "Toalety (303)" a ne "id mistnosti: 1"
+DONE: Spolu s editací také bude v seznamu u každé položky možnost ji smazat  - ale pozor na cizí klíče! Je třeba buď varovat, že nelze (třeba u místnosti, kterou někdo má někdo jako domovskou), nebo smazat i následné položky (se smazáním člověka se smažou i záznamy o jeho klíčích, to může zařídit kaskáda v databázi)
+
+Odevzdání
+------------------------------
+Zde odevzdejte link na git-repozitář (Github, GitLab, BitBucket) s projektem
+neukládejte do repozitáře jméno/heslo k DB!
+URL živé verze na školním serveru vasprostor.delta-www.cz
+Přístupové údaje jednoho uživatele a jednoho admina, aby bylo možné si řešení prohlédnout

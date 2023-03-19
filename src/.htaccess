@@ -1,0 +1,13 @@
+# Disable access of sensitive files
+
+<FilesMatch "^\.(env|ht)*">
+Require all denied
+</FilesMatch>
+
+<FilesMatch "^(db_helper|setup_env|shared_list_component)\.php$">
+Require all denied
+</FilesMatch>
+
+<Files "shared_headers.html">
+Require all denied
+</Files>
