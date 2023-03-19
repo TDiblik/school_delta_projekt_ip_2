@@ -2,7 +2,8 @@
 
 - `cp src/.env.example src/.env`
 - Update env info
-- Run `scripts/init.sql` in db
+- Run `scripts/init-db.sql` in db
+- Run `scripts/init-tables.sql` in db
 
 ## Deployment
 
