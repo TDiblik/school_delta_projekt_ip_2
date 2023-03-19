@@ -29,8 +29,11 @@
             $connection = get_db_connection();
             $query = $connection->prepare("$base_query $sort_column_param $sort_direction_param");
             $query->execute();
+
+            if ($user_info->is_admin) {
+                echo "<button style=\"float: right\"><a href=\"$new_link\">Založit</a></button>";
+            }
         ?>
-        <button style="float: right"><a href="<?php echo $new_link; ?>">Založit</a></button>
         <table class="table table-striped table-hover mb-4">
             <thead>
                 <tr>

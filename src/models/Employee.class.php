@@ -18,7 +18,7 @@
             $this->job_title_id = $_job_title_id;
             $this->room_id = $_room_id;
             $this->login = $_login;
-            $this->is_admin = $_is_admin != false;
+            $this->is_admin = ($_is_admin != false) ? 1 : 0;
         }
 
         function validate($sql_connection) {

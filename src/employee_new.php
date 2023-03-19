@@ -28,7 +28,6 @@
 
         if (!empty($_POST)) {
             $employee = new Employee("", $_POST["first_name"], $_POST["last_name"], $_POST["salary"], $_POST["job_title"], $_POST["room_id"], $_POST["login"], $_POST["is_admin"] ?? false);
-            var_dump($employee);
             
             $connection = get_db_connection();
             $possible_errors = $employee->validate($connection);

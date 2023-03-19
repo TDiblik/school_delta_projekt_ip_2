@@ -16,7 +16,6 @@
         $possible_errors = [];
         if (!empty($_POST)) {
             $room = new Room("", $_POST["name"], $_POST["number"], $_POST["telephone"]);
-            var_dump($room);
             
             $connection = get_db_connection();
             $possible_errors = $room->validate($connection);
